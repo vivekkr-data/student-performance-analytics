@@ -1,0 +1,34 @@
+test_alternative_subjects (test_functions.AnalyticsTests.test_alternative_subjects) ... ok
+test_attendance_boundary (test_functions.AnalyticsTests.test_attendance_boundary) ... ok
+test_calculations_independent (test_functions.AnalyticsTests.test_calculations_independent) ... ok
+test_cli_integration_synthetic_only (test_functions.AnalyticsTests.test_cli_integration_synthetic_only) ... ok
+test_csv_loading_and_exports (test_functions.AnalyticsTests.test_csv_loading_and_exports) ... ok
+test_department_aggregation (test_functions.AnalyticsTests.test_department_aggregation) ... ok
+test_duplicate_ids (test_functions.AnalyticsTests.test_duplicate_ids) ... ok
+test_empty_missing_malformed_csv (test_functions.AnalyticsTests.test_empty_missing_malformed_csv) ... ok
+test_exact_pass_threshold (test_functions.AnalyticsTests.test_exact_pass_threshold) ... ok
+test_export_error (test_functions.AnalyticsTests.test_export_error) ... ok
+test_grade_boundaries (test_functions.AnalyticsTests.test_grade_boundaries) ... ok
+test_input_not_mutated (test_functions.AnalyticsTests.test_input_not_mutated) ... ok
+test_insufficient_records (test_functions.AnalyticsTests.test_insufficient_records) ... ok
+test_invalid_grade (test_functions.AnalyticsTests.test_invalid_grade) ... ok
+test_invalid_numbers (test_functions.AnalyticsTests.test_invalid_numbers) ... ok
+test_invalid_subject_selection (test_functions.AnalyticsTests.test_invalid_subject_selection) ... ok
+test_missing_columns (test_functions.AnalyticsTests.test_missing_columns) ... ok
+test_missing_text (test_functions.AnalyticsTests.test_missing_text) ... ok
+test_reserved_columns (test_functions.AnalyticsTests.test_reserved_columns) ... ok
+test_single_department (test_functions.AnalyticsTests.test_single_department) ... ok
+test_single_subject_failure (test_functions.AnalyticsTests.test_single_subject_failure) ... ok
+test_statistics_independent (test_functions.AnalyticsTests.test_statistics_independent) ... ok
+test_subject_averages (test_functions.AnalyticsTests.test_subject_averages) ... ok
+test_tied_high_low (test_functions.AnalyticsTests.test_tied_high_low) ... ok
+test_top_five_ties (test_functions.AnalyticsTests.test_top_five_ties) ... ok
+test_undefined_correlation (test_functions.AnalyticsTests.test_undefined_correlation) ... ok
+test_whitespace_rejected (test_functions.AnalyticsTests.test_whitespace_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 18.425s
+
+OK
+
+Exit code: 0

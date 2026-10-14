@@ -1,0 +1,37 @@
+{
+  "rows": 30,
+  "columns": 9,
+  "passed": 30,
+  "failed": 0,
+  "class_average": 82.35,
+  "median": 84.0,
+  "population_std": 9.648099985662116,
+  "top": [
+    {
+      "student_id": "22",
+      "name": "Sanya",
+      "average": 97.5
+    },
+    {
+      "student_id": "29",
+      "name": "Nikhil",
+      "average": 96.5
+    },
+    {
+      "student_id": "11",
+      "name": "Rahul",
+      "average": 94.5
+    },
+    {
+      "student_id": "19",
+      "name": "Varun",
+      "average": 94.5
+    },
+    {
+      "student_id": "2",
+      "name": "Ananya",
+      "average": 92.5
+    }
+  ],
+  "verification": "All student totals/averages, subject mean/deviation, department counts/means independently checked; no discrepancies."
+}
