@@ -4,6 +4,7 @@
 |---|---|---|
 | Student identity, department, subject marks, attendance | functions.py: validate_student_data | Verified on 30 supplied records |
 | At least 15-20 records | Minimum 20 enforced | Implemented |
+| CSV structure and metadata selection validation | Strict row checks; explicit subject exclusions | Regression-tested |
 | Pandas read, organization and inspection | load_student_data, build_report | Tested |
 | NumPy calculations | calculate_student_results, calculate_class_statistics | Tested |
 | Functions, conditions, loops | functions.py, grading loop, report loop | Implemented |

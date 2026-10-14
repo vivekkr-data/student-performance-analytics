@@ -8,7 +8,7 @@ Course: Python with AI | Student: Vivek Kumar | Registration: 24BCE2234
 
 Repository: vivekkr-data/student-performance-analytics. Assignment deadline: 15 October 2026.
 
-The application was executed on the supplied Kaggle dataset. All 30 records passed validation, analysis completed successfully, and 27 automated software tests passed.
+The application was executed on the supplied Kaggle dataset. All 30 records passed validation, analysis completed successfully, and 31 automated software tests passed.
 
 ## 2. Objective
 
@@ -84,7 +84,7 @@ Python averaged 81.40/100 and ML averaged 83.30/100. ML was stronger by 1.90 mar
 
 Average attendance was 82.60%; 7 students (23.33%) had attendance below 75%. Low attendance was reported separately and did not change exam status.
 
-All 27 automated tests passed, including synthetic failure cases and grade boundaries. Separately, standard-library csv and statistics calculations independently checked all student totals and averages and the class summary against the exported results.
+All 31 automated tests passed, including synthetic failure cases and grade boundaries. Separately, standard-library csv and statistics calculations independently checked all student totals and averages and the class summary against the exported results.
 
 ## 9. Challenges & Learning
 

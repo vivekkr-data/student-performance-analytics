@@ -62,37 +62,37 @@ max           NaN    NaN        NaN   4.000000  22.000000     96.0000     97.000
 ============================================================================
 STUDENT RESULTS
 ----------------------------------------------------------------------------
-student_id   name department  year  age  attendance  python_marks  ml_marks  projects_completed  total_marks  average_marks  percentage grade status
-         1  Aarav        CSE     2   19          82            78        81                   2       159.00          79.50       79.50     B   PASS
-         2 Ananya       AIML     3   20          91            91        94                   4       185.00          92.50       92.50    A+   PASS
-         3  Arjun        CSE     2   19          76            67        72                   1       139.00          69.50       69.50     C   PASS
-         4   Diya        ECE     1   18          88            82        79                   3       161.00          80.50       80.50     A   PASS
-         5  Rohan       AIML     3   21          69            88        91                   5       179.00          89.50       89.50     A   PASS
-         6  Sneha        CSE     2   19          95            95        89                   4       184.00          92.00       92.00    A+   PASS
-         7  Karan        ISE     4   22          73            73        76                   2       149.00          74.50       74.50     B   PASS
-         8  Priya       AIML     3   20          84            85        88                   3       173.00          86.50       86.50     A   PASS
-         9 Aditya        ECE     1   18          92            76        74                   2       150.00          75.00       75.00     B   PASS
-        10   Isha        CSE     2   19          78            69        71                   1       140.00          70.00       70.00     B   PASS
-        11  Rahul       AIML     3   21          87            93        96                   5       189.00          94.50       94.50    A+   PASS
-        12  Meera        ISE     4   22          66            64        68                   1       132.00          66.00       66.00     C   PASS
-        13  Vivek        CSE     2   19          81            81        85                   3       166.00          83.00       83.00     A   PASS
-        14  Nisha        ECE     1   18          89            87        83                   4       170.00          85.00       85.00     A   PASS
-        15  Akash       AIML     3   20          94            90        92                   5       182.00          91.00       91.00    A+   PASS
-        16  Kavya        CSE     2   19          72            72        75                   2       147.00          73.50       73.50     B   PASS
-        17 Ritvik        ISE     4   22          79            79        82                   3       161.00          80.50       80.50     A   PASS
-        18  Pooja       AIML     3   21          86            86        90                   4       176.00          88.00       88.00     A   PASS
-        19  Varun        CSE     2   19          91            94        95                   5       189.00          94.50       94.50    A+   PASS
-        20  Aditi        ECE     1   18          74            68        70                   1       138.00          69.00       69.00     C   PASS
-        21 Manish        CSE     4   22          68            61        65                   1       126.00          63.00       63.00     C   PASS
-        22  Sanya       AIML     3   20          96            97        98                   5       195.00          97.50       97.50    A+   PASS
-        23   Yash        ISE     2   19          83            83        87                   3       170.00          85.00       85.00     A   PASS
-        24   Neha        CSE     4   21          77            75        78                   2       153.00          76.50       76.50     B   PASS
-        25  Harsh        ECE     1   18          90            89        91                   4       180.00          90.00       90.00    A+   PASS
-        26   Riya       AIML     3   20          85            92        93                   5       185.00          92.50       92.50    A+   PASS
-        27    Dev        CSE     2   19          71            70        73                   2       143.00          71.50       71.50     B   PASS
-        28 Simran        ISE     4   22          93            84        86                   4       170.00          85.00       85.00     A   PASS
-        29 Nikhil       AIML     3   21          88            96        97                   5       193.00          96.50       96.50    A+   PASS
-        30  Tanvi        ECE     1   18          80            77        80                   3       157.00          78.50       78.50     B   PASS
+student_id   name department  total_marks  average_marks  percentage grade status
+         1  Aarav        CSE       159.00          79.50       79.50     B   PASS
+         2 Ananya       AIML       185.00          92.50       92.50    A+   PASS
+         3  Arjun        CSE       139.00          69.50       69.50     C   PASS
+         4   Diya        ECE       161.00          80.50       80.50     A   PASS
+         5  Rohan       AIML       179.00          89.50       89.50     A   PASS
+         6  Sneha        CSE       184.00          92.00       92.00    A+   PASS
+         7  Karan        ISE       149.00          74.50       74.50     B   PASS
+         8  Priya       AIML       173.00          86.50       86.50     A   PASS
+         9 Aditya        ECE       150.00          75.00       75.00     B   PASS
+        10   Isha        CSE       140.00          70.00       70.00     B   PASS
+        11  Rahul       AIML       189.00          94.50       94.50    A+   PASS
+        12  Meera        ISE       132.00          66.00       66.00     C   PASS
+        13  Vivek        CSE       166.00          83.00       83.00     A   PASS
+        14  Nisha        ECE       170.00          85.00       85.00     A   PASS
+        15  Akash       AIML       182.00          91.00       91.00    A+   PASS
+        16  Kavya        CSE       147.00          73.50       73.50     B   PASS
+        17 Ritvik        ISE       161.00          80.50       80.50     A   PASS
+        18  Pooja       AIML       176.00          88.00       88.00     A   PASS
+        19  Varun        CSE       189.00          94.50       94.50    A+   PASS
+        20  Aditi        ECE       138.00          69.00       69.00     C   PASS
+        21 Manish        CSE       126.00          63.00       63.00     C   PASS
+        22  Sanya       AIML       195.00          97.50       97.50    A+   PASS
+        23   Yash        ISE       170.00          85.00       85.00     A   PASS
+        24   Neha        CSE       153.00          76.50       76.50     B   PASS
+        25  Harsh        ECE       180.00          90.00       90.00    A+   PASS
+        26   Riya       AIML       185.00          92.50       92.50    A+   PASS
+        27    Dev        CSE       143.00          71.50       71.50     B   PASS
+        28 Simran        ISE       170.00          85.00       85.00     A   PASS
+        29 Nikhil       AIML       193.00          96.50       96.50    A+   PASS
+        30  Tanvi        ECE       157.00          78.50       78.50     B   PASS
 
 ============================================================================
 CLASS STATISTICS AND PASS / FAIL ANALYSIS
@@ -132,12 +132,12 @@ python_marks    81.40    97.00   61.00   82.50           10.08      30          
 ============================================================================
 TOP 5 PERFORMERS
 ----------------------------------------------------------------------------
- rank student_id   name department  year  age  attendance  python_marks  ml_marks  projects_completed  total_marks  average_marks  percentage grade status
-    1         22  Sanya       AIML     3   20          96            97        98                   5       195.00          97.50       97.50    A+   PASS
-    2         29 Nikhil       AIML     3   21          88            96        97                   5       193.00          96.50       96.50    A+   PASS
-    3         11  Rahul       AIML     3   21          87            93        96                   5       189.00          94.50       94.50    A+   PASS
-    3         19  Varun        CSE     2   19          91            94        95                   5       189.00          94.50       94.50    A+   PASS
-    5          2 Ananya       AIML     3   20          91            91        94                   4       185.00          92.50       92.50    A+   PASS
+ rank student_id   name department  total_marks  average_marks  percentage grade status
+    1         22  Sanya       AIML       195.00          97.50       97.50    A+   PASS
+    2         29 Nikhil       AIML       193.00          96.50       96.50    A+   PASS
+    3         11  Rahul       AIML       189.00          94.50       94.50    A+   PASS
+    3         19  Varun        CSE       189.00          94.50       94.50    A+   PASS
+    5          2 Ananya       AIML       185.00          92.50       92.50    A+   PASS
 
 ============================================================================
 DEPARTMENT ANALYSIS
@@ -159,14 +159,14 @@ Below 75 Percentage: 23.33
 Correlation: 0.75
 
 Below 75% attendance:
-student_id   name department  year  age  attendance  python_marks  ml_marks  projects_completed  total_marks  average_marks  percentage grade status
-         5  Rohan       AIML     3   21          69            88        91                   5       179.00          89.50       89.50     A   PASS
-         7  Karan        ISE     4   22          73            73        76                   2       149.00          74.50       74.50     B   PASS
-        12  Meera        ISE     4   22          66            64        68                   1       132.00          66.00       66.00     C   PASS
-        16  Kavya        CSE     2   19          72            72        75                   2       147.00          73.50       73.50     B   PASS
-        20  Aditi        ECE     1   18          74            68        70                   1       138.00          69.00       69.00     C   PASS
-        21 Manish        CSE     4   22          68            61        65                   1       126.00          63.00       63.00     C   PASS
-        27    Dev        CSE     2   19          71            70        73                   2       143.00          71.50       71.50     B   PASS
+student_id   name department  attendance  average_marks status
+         5  Rohan       AIML          69          89.50   PASS
+         7  Karan        ISE          73          74.50   PASS
+        12  Meera        ISE          66          66.00   PASS
+        16  Kavya        CSE          72          73.50   PASS
+        20  Aditi        ECE          74          69.00   PASS
+        21 Manish        CSE          68          63.00   PASS
+        27    Dev        CSE          71          71.50   PASS
 
 ============================================================================
 FINAL PERFORMANCE SUMMARY

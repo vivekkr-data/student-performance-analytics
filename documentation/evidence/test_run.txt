@@ -1,8 +1,11 @@
 test_alternative_subjects (test_functions.AnalyticsTests.test_alternative_subjects) ... ok
 test_attendance_boundary (test_functions.AnalyticsTests.test_attendance_boundary) ... ok
+test_bundled_dataset_reference_results (test_functions.AnalyticsTests.test_bundled_dataset_reference_results) ... ok
 test_calculations_independent (test_functions.AnalyticsTests.test_calculations_independent) ... ok
 test_cli_integration_synthetic_only (test_functions.AnalyticsTests.test_cli_integration_synthetic_only) ... ok
+test_csv_field_counts (test_functions.AnalyticsTests.test_csv_field_counts) ... ok
 test_csv_loading_and_exports (test_functions.AnalyticsTests.test_csv_loading_and_exports) ... ok
+test_csv_quoted_names_and_leading_zero_ids (test_functions.AnalyticsTests.test_csv_quoted_names_and_leading_zero_ids) ... ok
 test_department_aggregation (test_functions.AnalyticsTests.test_department_aggregation) ... ok
 test_duplicate_ids (test_functions.AnalyticsTests.test_duplicate_ids) ... ok
 test_empty_missing_malformed_csv (test_functions.AnalyticsTests.test_empty_missing_malformed_csv) ... ok
@@ -14,6 +17,7 @@ test_insufficient_records (test_functions.AnalyticsTests.test_insufficient_recor
 test_invalid_grade (test_functions.AnalyticsTests.test_invalid_grade) ... ok
 test_invalid_numbers (test_functions.AnalyticsTests.test_invalid_numbers) ... ok
 test_invalid_subject_selection (test_functions.AnalyticsTests.test_invalid_subject_selection) ... ok
+test_metadata_cannot_be_subjects (test_functions.AnalyticsTests.test_metadata_cannot_be_subjects) ... ok
 test_missing_columns (test_functions.AnalyticsTests.test_missing_columns) ... ok
 test_missing_text (test_functions.AnalyticsTests.test_missing_text) ... ok
 test_reserved_columns (test_functions.AnalyticsTests.test_reserved_columns) ... ok
@@ -27,8 +31,6 @@ test_undefined_correlation (test_functions.AnalyticsTests.test_undefined_correla
 test_whitespace_rejected (test_functions.AnalyticsTests.test_whitespace_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 18.425s
+Ran 31 tests in 33.787s
 
 OK
-
-Exit code: 0

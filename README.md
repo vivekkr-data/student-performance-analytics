@@ -1,180 +1,227 @@
 # Student Performance Analytics System
 
-Python with AI mini project | Vivek Kumar | 24BCE2234
+**A Python console application that turns student marks and attendance into clear academic reports.**
 
-**Status: application executed successfully on the supplied Kaggle CSV; 30 records analyzed, 27 automated tests passed.**
+Built for the **Python with AI** mini project using Python, NumPy and Pandas.
 
-Repository: https://github.com/vivekkr-data/student-performance-analytics
+**Author:** Vivek Kumar · **Registration:** 24BCE2234
 
-[Project documentation (PDF)](documentation/Project_Documentation.pdf) | [Full analysis](outputs/performance_summary.txt) | [Student results](outputs/student_results.csv)
+[Project report (PDF)](documentation/Project_Documentation.pdf) · [Student results](outputs/student_results.csv) · [Full analysis](outputs/performance_summary.txt) · [Test evidence](documentation/evidence/test_run.txt)
 
-## Overview and objective
-Read a student CSV, validate its contents, and produce clear student, subject, class, department and attendance summaries. The project demonstrates Python functions, loops and conditions, NumPy numerical operations and Pandas data analysis. No machine-learning model or web application is used.
+## At a glance
 
-## Technologies and requirements
-Python 3.11+ (tested with Python 3.12.14), NumPy 2.3.5 and Pandas 2.2.3. CSV stores inputs and exports. Git/GitHub are used for publication once the target repository is available. PDF documentation is pre-generated and needs no extra runtime dependencies.
+| Dataset | Class average | Pass rate | Verification |
+|---|---|---|---|
+| 30 students · 2 subjects · 4 departments | **82.35 / 100** | **100%** (30 passed, 0 failed) | **31 automated tests passed** |
 
-## Dataset and provenance
-Source: [TSS Pandas Challenge #1](https://www.kaggle.com/competitions/tss-pandas-challenge-1/data), hosted by Gagan H.
+The application loads `students.csv`, validates the data, calculates each student's performance, prints the analysis, and saves four reports. The original dataset is included, so no Kaggle login is needed to run this repository.
 
-The user supplied the downloaded Kaggle archive `tss-pandas-challenge-1.zip`. Its actual student file is `student_data.csv` (underscore), although the source page describes a hyphenated filename. It is included here byte-for-byte as `students.csv`: **30 rows and 9 columns**, with no missing values or duplicate student IDs. The archive's competition answer template is not needed for this assignment and is excluded.
+## Quick start
 
-Both selected subject scores are treated as marks out of 100 under the project's declared grading model. All observed marks are within that range; the source CSV does not itself encode a maximum-score field. The dataset was designed for Pandas practice and is not represented as independently collected student observations. No independent redistribution license was found in the supplied archive or retrievable source page; no license over the source data is asserted by this project. See `DATASET_SOURCE.md` for the byte checksum and attribution.
+### 1. Download the project
 
-| Column | Meaning |
-|---|---|
-| student_id | Unique student identifier, preserved as text |
-| name | Student name |
-| department | Department |
-| year | Year of study; retained as source metadata |
-| age | Age; retained as source metadata |
-| attendance | Percentage, 0 to 100 |
-| python_marks | Python score, assumed out of 100 |
-| ml_marks | ML score, assumed out of 100 |
-| projects_completed | Source metadata; excluded from exam marks |
+Use **Code → Download ZIP** on GitHub and extract it, or clone it:
 
-At least 20 records are required by this implementation. The assignment permits 15-20 or more. Additional metadata is retained; missing optional metadata is displayed, not used in score calculations. Required analytical fields cannot be missing. Validation rejects duplicate IDs, blank required text, surrounding text whitespace, duplicate headers, nonnumeric or nonfinite scores, out-of-range attendance/marks, and reserved output column names. It does not silently clean or discard rows.
-
-## Setup and run
-From the project directory:
-
-```bash
-python -m venv .venv
-```
-
-Windows PowerShell:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Linux/macOS:
-
-```bash
-source .venv/bin/activate
-```
-
-Then:
-
-```bash
-python -m pip install -r requirements.txt
-python main.py
-python -m unittest discover -s tests -v
-```
-
-Alternative paths:
-
-```bash
-python main.py --data /path/to/students.csv --output /path/to/reports
-```
-
-Alternative verified subjects, each out of 100:
-
-```bash
-python main.py --subjects math_marks science_marks
-```
-
-The alternate CSV must still include `student_id`, `name`, `department` and `attendance`. Explicitly adapt the original dataset if necessary and document the transformation; never invent missing identifiers or departments while claiming they are original data. Default file paths resolve relative to `main.py`, allowing execution from another directory.
-
-## Formulas and project assumptions
-For m subjects, each out of 100:
-
-- Total = sum of subject scores.
-- Average = total / m.
-- Percentage = total / (100 x m) x 100.
-- PASS requires every subject score >= 40. Otherwise FAIL and grade F.
-- Pass percentage = passed / student count x 100.
-- Population standard deviation uses `ddof=0`.
-
-| Percentage (all subjects passed) | Grade |
-|---|---|
-| 90 to 100 | A+ |
-| 80 to below 90 | A |
-| 70 to below 80 | B |
-| 60 to below 70 | C |
-| 50 to below 60 | D |
-| 40 to below 50 | E |
-| Below 40, or any failed subject | F |
-
-These are project rules, not institutional regulations. Calculations and grade decisions use unrounded values. Console tables show two decimals; CSV exports use up to ten significant digits. Attendance below 75% is flagged without changing exam pass/fail status.
-
-## Features and analysis
-- Pandas CSV loading, first five rows, dimensions, column names, `info()`, missing counts and `describe()`.
-- NumPy row totals/means, class statistics and population standard deviation.
-- Per-student total, average, percentage, grade and status.
-- Passed/failed counts and percentages, grade distribution.
-- Highest and lowest totals/averages, mean, median and all tied highest/lowest students.
-- Subject mean, maximum, minimum, median, deviation and pass rates.
-- Top five rows sorted by average descending, total descending, then student ID lexicographically ascending. Tied scores share competition rank; exactly five rows are shown, so a boundary tie may be split using ID order.
-- Department counts, means and pass rates using `groupby()`; tied extremes retained.
-- Attendance summary, below-75% list and Pearson correlation when defined.
-- Clear data-supported summary; no causal claims.
-
-## Project structure
-```text
-students.csv                Original supplied CSV, renamed without changes
-main.py                     Console entry point and error handling
-functions.py                Validation, calculations, reporting, exports
-requirements.txt            Exact tested dependencies
-README.md                   Setup, rules and submission status
-DATASET_SOURCE.md           Authentic-data acquisition and permission status
-.gitignore                  Cache, environment and credential exclusions
-tests/test_functions.py     Synthetic-only automated tests
-documentation/
-  Project_Documentation.md  Required ten sections with verified results
-  Project_Documentation.pdf Formatted PDF of the completed analysis
-  REQUIREMENTS_CHECKLIST.md Requirement-to-code mapping and submission checklist
-  evidence/                 Actual execution logs, not screenshots
-```
-The verified run generated `outputs/`, containing `student_results.csv`, `subject_analysis.csv`, `department_analysis.csv` and `performance_summary.txt`. The first preserves source columns plus computed results. The text report contains the full console analysis. Existing files at the chosen output location are overwritten on subsequent runs; choose a new output directory to retain earlier reports.
-
-## Verified results
-| Metric | Result |
-|---|---:|
-| Students analyzed | 30 |
-| Passed / failed | 30 / 0 |
-| Pass percentage | 100.00% |
-| Class average | 82.35 / 100 |
-| Highest performer | Sanya, ID 22: 97.50 / 100 |
-| Lowest performer | Manish, ID 21: 63.00 / 100 |
-| Python average | 81.40 / 100 |
-| ML average | 83.30 / 100 |
-| Average attendance | 82.60% |
-| Students below 75% attendance | 7 (23.33%) |
-
-All 30 students passed under the declared subject threshold; this does not imply that the application cannot detect failures. Synthetic tests exercise failure cases, including failure in one subject despite a high average.
-
-## Testing and execution evidence
-```bash
-python -m unittest discover -s tests -v
-python main.py
-```
-
-27 automated tests passed. They cover validation, boundaries, ties, numerical calculations, exports and execution from a different working directory. Controlled synthetic fixtures are used only inside tests. Separately, the supplied Kaggle CSV was processed by the real application with exit code 0. Python's standard `csv` and `statistics` modules independently checked every student's total/average and the important class aggregates against exported results.
-
-Evidence:
-- `documentation/evidence/actual_run.txt`: genuine full program output.
-- `documentation/evidence/test_run.txt`: genuine test-run log.
-- `documentation/evidence/independent_verification.json`: independently calculated aggregate results.
-
-No terminal screenshot images are fabricated. The report includes actual output excerpts, and the full text logs are available for inspection.
-
-## GitHub and submission
-Repository: https://github.com/vivekkr-data/student-performance-analytics
-
-Clone and run:
 ```bash
 git clone https://github.com/vivekkr-data/student-performance-analytics.git
 cd student-performance-analytics
+```
+
+If you downloaded the ZIP, open a terminal inside the extracted folder containing `main.py`.
+
+### 2. Run the project
+
+Use Python 3.11 or 3.12. Tested with Python 3.12.14, NumPy 2.3.5 and Pandas 2.2.3.
+
+```bash
 python -m pip install -r requirements.txt
 python main.py
 ```
 
-Deadline in the supplied assignment: **15 October 2026**. Paste the repository URL into the EWB Google Form and submit it. The Google Form URL was not supplied, and form submission has not been performed.
+No API keys, database, web server or machine-learning packages are required.
 
-## Learning outcomes and limitations
-The implementation demonstrates validation, NumPy array calculations, Pandas grouping/filtering/sorting, reusable functions, testing and reproducible execution. Study each function before evaluation.
+### 3. Open the results
 
-Every selected subject must use the declared 100-point scale. Grades and the 75% attendance flag are project assumptions, not official institutional rules. Invalid required data is rejected rather than silently repaired. Correlation is descriptive and does not establish causation. The small practice dataset limits generalization. Console values are rounded for readability; decisions use unrounded values.
+The console prints the full analysis. Reports are written to [`outputs/`](outputs/):
 
-Author: **Vivek Kumar - 24BCE2234**.
+| File | Contents |
+|---|---|
+| [student_results.csv](outputs/student_results.csv) | All original columns plus total, average, percentage, grade and status |
+| [subject_analysis.csv](outputs/subject_analysis.csv) | Mean, highest, lowest, median, population deviation and pass rate per subject |
+| [department_analysis.csv](outputs/department_analysis.csv) | Student count, mean score, pass count and pass rate per department |
+| [performance_summary.txt](outputs/performance_summary.txt) | Full readable report, including dataset overview and final insights |
+
+Running again replaces these four files in the selected output folder. Use `--output` to preserve a separate run.
+
+## What the application does
+
+| Stage | Analysis |
+|---|---|
+| Inspect | First five rows, dimensions, column names, data types, missing values and descriptive statistics |
+| Calculate | Student-wise totals, averages, percentages, grades and pass/fail |
+| Summarize | Class mean, median, population deviation, highest/lowest scores, pass/fail totals and grade distribution |
+| Compare subjects | Python and ML statistics, strongest/weakest subject and difference in means |
+| Rank | Top five students; every tied highest/lowest student is included in the summary |
+| Group | Department-wise counts, means and pass rates using Pandas `groupby()` |
+| Check attendance | Mean, maximum, minimum, students below 75%, and correlation with average marks |
+| Export | Three CSV reports and one text report |
+
+## Verified results
+
+The following values come from executing the included CSV, not sample output.
+
+| Metric | Result |
+|---|---:|
+| Student count | 30 |
+| Passed / failed | 30 / 0 |
+| Pass percentage | 100.00% |
+| Class average | 82.35 / 100 |
+| Class median | 84.00 / 100 |
+| Class population standard deviation | 9.65 marks |
+| Highest performer | Sanya (ID 22): 195 / 200, average 97.50 |
+| Lowest performer | Manish (ID 21): 126 / 200, average 63.00 |
+| Python mean | 81.40 / 100 |
+| ML mean | 83.30 / 100 |
+| Average attendance | 82.60% |
+| Attendance below 75% | 7 students (23.33%) |
+
+### Top five students
+
+| Rank | ID | Name | Department | Total / 200 | Average / 100 | Grade |
+|---:|---:|---|---|---:|---:|---|
+| 1 | 22 | Sanya | AIML | 195 | 97.50 | A+ |
+| 2 | 29 | Nikhil | AIML | 193 | 96.50 | A+ |
+| 3 | 11 | Rahul | AIML | 189 | 94.50 | A+ |
+| 3 | 19 | Varun | CSE | 189 | 94.50 | A+ |
+| 5 | 2 | Ananya | AIML | 185 | 92.50 | A+ |
+
+Sorting uses average descending, total descending, then student ID **as text** ascending. Equal scores share competition rank (1, 2, 3, 3, 5). The display contains exactly five rows; ties at the fifth position are resolved by ID order. All tied class highest/lowest students are still included in the final summary.
+
+All supplied students meet the pass rule. Separate tests verify that failing records are correctly identified.
+
+## Calculations and grading
+
+For two equally weighted subjects, each treated as out of 100:
+
+```text
+Total marks = Python marks + ML marks
+Average marks = Total marks / 2
+Percentage = Total marks / 200 × 100
+Pass percentage = Passed students / Total students × 100
+```
+
+A student passes only when **every subject score is at least 40**. Failure in any subject gives overall **FAIL** and grade **F**, regardless of the average.
+
+| Percentage, with every subject passed | Grade |
+|---|---|
+| 90–100 | A+ |
+| 80–below 90 | A |
+| 70–below 80 | B |
+| 60–below 70 | C |
+| 50–below 60 | D |
+| 40–below 50 | E |
+| Below 40, or a failed subject | F |
+
+For example, Python = 39 and ML = 100 gives total = 139 and average = 69.50, but the final status is **FAIL**, grade **F**.
+
+- Grades use unrounded values; console tables display two decimals.
+- CSV numbers use up to ten significant digits.
+- Population standard deviation uses `ddof=0`.
+- Attendance below 75% is a separate observation, not an exam-failure rule.
+- Grades, equal subject weights and the attendance threshold are **project assumptions**, not institutional regulations.
+- Correlation is descriptive, not evidence that attendance causes a score change. A constant input makes correlation undefined (`None`).
+
+## Dataset
+
+Source: [TSS Pandas Challenge #1 — Kaggle](https://www.kaggle.com/competitions/tss-pandas-challenge-1/data), hosted by Gagan H.
+
+The supplied archive contains `student_data.csv`. Its bytes are preserved unchanged as [`students.csv`](students.csv): **30 rows, 9 columns**, zero missing values and unique IDs. The competition answer template is not used in this project.
+
+| Column | Role |
+|---|---|
+| `student_id` | Unique ID, stored as text to preserve leading zeroes |
+| `name` | Student name |
+| `department` | Department grouping |
+| `year` | Original metadata; excluded from marks |
+| `age` | Original metadata; excluded from marks |
+| `attendance` | Attendance percentage, 0–100 |
+| `python_marks` | Python exam score |
+| `ml_marks` | ML exam score |
+| `projects_completed` | Original metadata; excluded from marks |
+
+The dataset is intended for Pandas practice. The CSV does not encode maximum-score fields; the analysis explicitly assumes both subjects are out of 100. See [dataset provenance](DATASET_SOURCE.md) for the exact checksum, source attribution and license status. No independent open-data license is asserted here.
+
+## Validation and error handling
+
+The program rejects:
+
+- Fewer than 20 student records or missing required columns.
+- Empty files, blank/duplicate headers, malformed quoting, and rows with missing/extra fields.
+- Missing or blank student details, duplicate IDs and surrounding whitespace in identity fields.
+- Missing, nonnumeric, infinite or out-of-range marks/attendance.
+- Output columns already present in the input, to prevent overwriting original data.
+- Identity fields, age, year, attendance or project count selected as exam subjects.
+
+It does not fill invalid scores with zero, silently drop rows, or rewrite the input CSV. Optional source metadata is preserved. Ordinary input/file errors produce a readable message and exit code 1; successful runs exit with 0.
+
+## Tests and evidence
+
+Run tests from the project folder:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+**31 tests passed.** Coverage includes calculations, grade boundaries, subject failure, tied ranks, department/attendance analysis, CSV structure, quoted names, leading-zero IDs, invalid inputs, exports, CLI execution and the bundled dataset's reference results. Tests use temporary directories for exports.
+
+The supplied CSV was also run end to end. Standard-library `csv` and `statistics` calculations independently checked all student totals/averages, subject means/deviations and department counts/means.
+
+| Evidence | Purpose |
+|---|---|
+| [Actual run](documentation/evidence/actual_run.txt) | Genuine program output |
+| [Test run](documentation/evidence/test_run.txt) | Executed test names and results |
+| [Independent verification](documentation/evidence/independent_verification.json) | Separately calculated reference values |
+
+The report includes genuine text output. Screenshot images are optional in the assignment and are not included.
+
+## Code guide
+
+| File / functions | Responsibility |
+|---|---|
+| [`main.py`](main.py) | Parse options, load/validate, call analysis, export and print |
+| `load_student_data`, `validate_student_data` | Read CSV and check its structure/content |
+| `calculate_student_results`, `assign_grade`, `determine_pass_status` | Compute individual results |
+| `calculate_class_statistics`, `analyze_subjects` | Class and subject statistics |
+| `analyze_departments`, `analyze_attendance` | Grouping and attendance analysis |
+| `get_top_performers` | Deterministic ranking |
+| `build_report`, `display_summary`, `export_results` | Presentation and output files |
+
+Calculation functions are in [`functions.py`](functions.py). Python loops and conditions implement grading and report construction; NumPy handles numerical arrays; Pandas handles DataFrames, filtering, grouping, sorting and CSV I/O.
+
+## Optional commands
+
+```bash
+python main.py --help
+python main.py --output reports_second_run
+python main.py --data "path/to/another_students.csv" --output reports_custom
+```
+
+For a separate CSV with different exam columns, each out of 100:
+
+```bash
+python main.py --data "path/to/another_students.csv" --subjects math_marks science_marks
+```
+
+That file must still contain `student_id`, `name`, `department` and `attendance`. Default paths are relative to `main.py`; explicitly supplied relative paths are relative to your terminal's current folder.
+
+## Documentation and submission
+
+The [PDF report](documentation/Project_Documentation.pdf) and [Markdown report](documentation/Project_Documentation.md) contain the assignment's ten sections in order: Project Title, Objective, Technologies Used, Dataset Description, Implementation, Key Features, Output, Final Outcome, Challenges & Learning, and GitHub Repository.
+
+[Requirement checklist](documentation/REQUIREMENTS_CHECKLIST.md) maps the brief to the implementation.
+
+**Deadline:** 15 October 2026. Submit this repository link in the EWB Google Form:
+
+https://github.com/vivekkr-data/student-performance-analytics
+
+Google Form submission has not been performed. The project uses a small practice dataset; results should not be generalized to a larger student population.
