@@ -14,7 +14,7 @@ Built for the **Python with AI** mini project using Python, NumPy and Pandas.
 |---|---|---|---|
 | 30 students · 2 subjects · 4 departments | **82.35 / 100** | **100%** (30 passed, 0 failed) | **31 automated tests passed** |
 
-The application loads `students.csv`, validates the data, calculates each student's performance, prints the analysis, and saves four reports. The original dataset is included, so no Kaggle login is needed to run this repository.
+The application loads `students.csv`, validates the data, calculates each student's performance, prints the analysis, and saves four reports. The dataset is included in the repository.
 
 ## Quick start
 
@@ -37,8 +37,6 @@ Use Python 3.11 or 3.12. Tested with Python 3.12.14, NumPy 2.3.5 and Pandas 2.2.
 python -m pip install -r requirements.txt
 python main.py
 ```
-
-No API keys, database, web server or machine-learning packages are required.
 
 ### 3. Open the results
 
@@ -68,7 +66,7 @@ Running again replaces these four files in the selected output folder. Use `--ou
 
 ## Verified results
 
-The following values come from executing the included CSV, not sample output.
+Results from the included `students.csv` dataset:
 
 | Metric | Result |
 |---|---:|
@@ -96,8 +94,6 @@ The following values come from executing the included CSV, not sample output.
 | 5 | 2 | Ananya | AIML | 185 | 92.50 | A+ |
 
 Sorting uses average descending, total descending, then student ID **as text** ascending. Equal scores share competition rank (1, 2, 3, 3, 5). The display contains exactly five rows; ties at the fifth position are resolved by ID order. All tied class highest/lowest students are still included in the final summary.
-
-All supplied students meet the pass rule. Separate tests verify that failing records are correctly identified.
 
 ## Calculations and grading
 
@@ -135,7 +131,7 @@ For example, Python = 39 and ML = 100 gives total = 139 and average = 69.50, but
 
 Source: [TSS Pandas Challenge #1 — Kaggle](https://www.kaggle.com/competitions/tss-pandas-challenge-1/data), hosted by Gagan H.
 
-The supplied archive contains `student_data.csv`. Its bytes are preserved unchanged as [`students.csv`](students.csv): **30 rows, 9 columns**, zero missing values and unique IDs. The competition answer template is not used in this project.
+The original `student_data.csv` is included unchanged as [`students.csv`](students.csv). It contains **30 rows and 9 columns**, with no missing values or duplicate student IDs.
 
 | Column | Role |
 |---|---|
@@ -149,7 +145,7 @@ The supplied archive contains `student_data.csv`. Its bytes are preserved unchan
 | `ml_marks` | ML exam score |
 | `projects_completed` | Original metadata; excluded from marks |
 
-The dataset is intended for Pandas practice. The CSV does not encode maximum-score fields; the analysis explicitly assumes both subjects are out of 100. See [dataset provenance](DATASET_SOURCE.md) for the exact checksum, source attribution and license status. No independent open-data license is asserted here.
+This Pandas practice dataset is analyzed using the declared 100-point scale for each subject. [Dataset source details](DATASET_SOURCE.md) include attribution, file integrity and license information.
 
 ## Validation and error handling
 
@@ -162,9 +158,9 @@ The program rejects:
 - Output columns already present in the input, to prevent overwriting original data.
 - Identity fields, age, year, attendance or project count selected as exam subjects.
 
-It does not fill invalid scores with zero, silently drop rows, or rewrite the input CSV. Optional source metadata is preserved. Ordinary input/file errors produce a readable message and exit code 1; successful runs exit with 0.
+Validation errors display a clear message. The original CSV is preserved; analysis starts only after the required checks pass.
 
-## Tests and evidence
+## Testing
 
 Run tests from the project folder:
 
@@ -172,17 +168,15 @@ Run tests from the project folder:
 python -m unittest discover -s tests -v
 ```
 
-**31 tests passed.** Coverage includes calculations, grade boundaries, subject failure, tied ranks, department/attendance analysis, CSV structure, quoted names, leading-zero IDs, invalid inputs, exports, CLI execution and the bundled dataset's reference results. Tests use temporary directories for exports.
+**31 tests passed**, covering calculations, grading boundaries, pass/fail, ties, data validation, exports and program execution.
 
-The supplied CSV was also run end to end. Standard-library `csv` and `statistics` calculations independently checked all student totals/averages, subject means/deviations and department counts/means.
+The application was run on the included dataset. Student, subject and department calculations were also checked independently.
 
 | Evidence | Purpose |
 |---|---|
-| [Actual run](documentation/evidence/actual_run.txt) | Genuine program output |
+| [Actual run](documentation/evidence/actual_run.txt) | Program output |
 | [Test run](documentation/evidence/test_run.txt) | Executed test names and results |
 | [Independent verification](documentation/evidence/independent_verification.json) | Separately calculated reference values |
-
-The report includes genuine text output. Screenshot images are optional in the assignment and are not included.
 
 ## Code guide
 
