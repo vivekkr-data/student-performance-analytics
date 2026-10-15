@@ -213,15 +213,3 @@ python main.py --data "path/to/another_students.csv" --subjects math_marks scien
 ```
 
 That file must still contain `student_id`, `name`, `department` and `attendance`. Default paths are relative to `main.py`; explicitly supplied relative paths are relative to your terminal's current folder.
-
-## Documentation and submission
-
-The [PDF report](documentation/Project_Documentation.pdf) and [Markdown report](documentation/Project_Documentation.md) contain the assignment's ten sections in order: Project Title, Objective, Technologies Used, Dataset Description, Implementation, Key Features, Output, Final Outcome, Challenges & Learning, and GitHub Repository.
-
-[Requirement checklist](documentation/REQUIREMENTS_CHECKLIST.md) maps the brief to the implementation.
-
-**Deadline:** 15 October 2026. Submit this repository link in the EWB Google Form:
-
-https://github.com/vivekkr-data/student-performance-analytics
-
-Google Form submission has not been performed. The project uses a small practice dataset; results should not be generalized to a larger student population.
